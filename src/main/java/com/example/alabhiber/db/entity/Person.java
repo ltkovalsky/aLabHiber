@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@ToString
+@ToString(exclude = "documents")
 @EqualsAndHashCode(exclude = "documents")
 public class Person {
     @Id

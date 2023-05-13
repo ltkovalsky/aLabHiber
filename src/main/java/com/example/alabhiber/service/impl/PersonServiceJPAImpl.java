@@ -6,7 +6,10 @@ import com.example.alabhiber.service.PersonService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -36,8 +39,13 @@ public class PersonServiceJPAImpl implements PersonService {
     }
 
     @Override
-    public Set<Person> findAllByDocNumberLike(String docNumberPart) {
-        return null;    // todo: implement
+    public List<Person> findAllByDocNumberLike(String pattern) {
+        return personRepository.findAllByDocNumLike(pattern);
+    }
+
+    @Override
+    public List<Person> findAllByActiveDocNumberLike(String pattern) {
+        return personRepository.findAllByActiveDocNumLike(pattern);
     }
 
     private void linkDoc(Person p) {

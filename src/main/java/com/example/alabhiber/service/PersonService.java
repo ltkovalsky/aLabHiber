@@ -4,7 +4,6 @@ import com.example.alabhiber.db.entity.Person;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 import java.util.UUID;
 
 public interface PersonService {
@@ -17,6 +16,8 @@ public interface PersonService {
 
     List<Person> findByLastName(String lastName);
 
-    Set<Person> findAllByDocNumberLike(String docNumberPart);
+    List<Person> findAllByDocNumberLike(String pattern);
+
+    List<Person> findAllByActiveDocNumberLike(String pattern);
 
 }
