@@ -13,6 +13,7 @@ public class ALabHiberApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+
         // todo: call smth
     }
 }

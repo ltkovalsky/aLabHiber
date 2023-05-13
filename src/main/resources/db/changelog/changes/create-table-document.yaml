@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: akovalsky
+      changes:
+        - createTable:
+            tableName: DOCUMENT
+            columns:
+              - column:
+                  name: ID
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: TYPE
+                  type: varchar(50) # enum will be better, todo: change while polishing
+                  constraints:
+                    nullable: false
+              - column:
+                  name: DOC_NUMBER
+                  type: varchar(50) # don't know what kind of number will be stored in this field
+                  constraints:
+                    nullable: false
+              - column:
+                  name: ARCHIVED
+                  type: boolean
+                  defaultValue: false
+              - column:
+                  name: PERSON_ID
+                  type: UUID
+                  constraints:
+                    nullable: false
+                    foreignKeyName: DOCUMENT__PERSON__FK
+                    referencedTableName: PERSON
+                    referencedColumnNames: ID
