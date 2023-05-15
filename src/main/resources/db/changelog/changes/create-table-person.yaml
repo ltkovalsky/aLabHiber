@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: akovalsky
+      changes:
+        - createTable:
+            tableName: PERSON
+            columns:
+              - column:
+                  name: ID
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: FIRST_NAME
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: MIDDLE_NAME
+                  type: varchar(50)
+              - column:
+                  name: LAST_NAME
+                  type: varchar(50)
+                  constraints:
+                    nullable: false

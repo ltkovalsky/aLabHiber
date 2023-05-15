@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: classpath:/db/changelog/changes/create-table-person.yaml
+  - include:
+      file: classpath:db/changelog/changes/create-table-document.yaml
